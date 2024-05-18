@@ -1,23 +1,21 @@
+import 'package:easyhome/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:molten_navigationbar_flutter/molten_navigationbar_flutter.dart';
 
 Widget buildPage(int index, BuildContext context) {
   List<Widget> widget = [
+    const HomePage(),
     Container(
       color: Theme.of(context).colorScheme.surface,
-      child: const Text("HOME PAGE"),
+      child: const Center(child: Text("TRANSACTION PAGE")),
     ),
     Container(
       color: Theme.of(context).colorScheme.surface,
-      child: const Text("TRANSACTION PAGE"),
+      child: const Center(child: Text("TENNET PAGE")),
     ),
     Container(
       color: Theme.of(context).colorScheme.surface,
-      child: const Text("TENNET PAGE"),
-    ),
-    Container(
-      color: Theme.of(context).colorScheme.surface,
-      child: const Text("PROFILE PAGE"),
+      child: const Center(child: Text("PROFILE PAGE")),
     )
   ];
 

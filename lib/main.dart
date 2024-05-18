@@ -1,5 +1,5 @@
 import 'package:easyhome/views/pages/application_page.dart';
-import 'package:easyhome/views/pages/welcome_page.dart';
+
 import 'package:easyhome/views/themes/app_themedata.dart';
 
 import 'package:flutter/material.dart';

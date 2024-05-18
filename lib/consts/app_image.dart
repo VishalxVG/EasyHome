@@ -1,9 +1,21 @@
+// ignore_for_file: constant_identifier_names
+
 class AppImage {
   static const String BACKGROUNDIMAGE = "assets/images/blueG.jpg";
 
   static const String LOGO = "assets/logos/Logo2.png";
 
   static const String LOGO2 = 'assets/logos/Logo.png';
+
+  static const String PROFILEIMAGE = "assets/images/Profile.png";
+
+  static const String NOTRANSACTION = "assets/images/image6.jpg";
+
+  static const String DOCTOR = "assets/images/doctor.png";
+  static const String FOOD = "assets/images/food.png";
+  static const String HOUSE = "assets/images/house.png";
+  static const String SHOPPING = "assets/images/shooping.png";
+  static const String CAR = "assets/images/car.png";
 }
 
 class AppIcons {

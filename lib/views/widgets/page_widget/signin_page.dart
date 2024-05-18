@@ -18,7 +18,7 @@ Widget SingInPage(BuildContext context) {
           style: TextStyle(
               color: Theme.of(context).colorScheme.onSurface,
               fontSize: 24,
-              fontWeight: FontWeight.bold),
+              fontWeight: FontWeight.w400),
         ),
         const SizedBox(
           height: 20,

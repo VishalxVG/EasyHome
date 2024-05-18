@@ -32,13 +32,15 @@ Widget CustomButton(
                 ? Theme.of(context).colorScheme.onSurface
                 : Theme.of(context).colorScheme.onPrimary,
           ),
-          Text(title,
-              style: TextStyle(
-                fontSize: 12,
-                color: selectedButton == title
-                    ? Theme.of(context).colorScheme.onSurface
-                    : Theme.of(context).colorScheme.onPrimary,
-              )),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 12,
+              color: selectedButton == title
+                  ? Theme.of(context).colorScheme.onSurface
+                  : Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
         ],
       ),
     ),

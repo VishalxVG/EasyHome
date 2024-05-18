@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData flexLightTheme = FlexThemeData.light(
-  scheme: FlexScheme.deepBlue,
+  scheme: FlexScheme.purpleM3,
   surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
   blendLevel: 7,
   appBarOpacity: 0.00,
@@ -13,6 +13,7 @@ ThemeData flexLightTheme = FlexThemeData.light(
     blendOnColors: false,
     useTextTheme: true,
     useM2StyleDividerInM3: true,
+    filledButtonRadius: 11.0,
     elevatedButtonRadius: 8.0,
     inputDecoratorBackgroundAlpha: 115,
     inputDecoratorBorderType: FlexInputBorderType.underline,
@@ -24,15 +25,16 @@ ThemeData flexLightTheme = FlexThemeData.light(
     appBarBackgroundSchemeColor: SchemeColor.onSecondary,
     appBarScrolledUnderElevation: 9.5,
   ),
+  keyColors: const FlexKeyColors(),
   visualDensity: FlexColorScheme.comfortablePlatformDensity,
   useMaterial3: true,
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
-  fontFamily: GoogleFonts.notoSans().fontFamily,
+  fontFamily: GoogleFonts.merriweather().fontFamily,
 );
 
 ThemeData flexDarkTheme = FlexThemeData.dark(
-  scheme: FlexScheme.deepBlue,
+  scheme: FlexScheme.purpleM3,
   surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
   blendLevel: 13,
   appBarElevation: 11.5,
@@ -40,6 +42,7 @@ ThemeData flexDarkTheme = FlexThemeData.dark(
     blendOnLevel: 20,
     useTextTheme: true,
     useM2StyleDividerInM3: true,
+    filledButtonRadius: 11.0,
     elevatedButtonRadius: 8.0,
     inputDecoratorBorderType: FlexInputBorderType.underline,
     inputDecoratorRadius: 13.0,
@@ -48,9 +51,13 @@ ThemeData flexDarkTheme = FlexThemeData.dark(
     useInputDecoratorThemeInDialogs: true,
     snackBarRadius: 8,
   ),
+  keyColors: const FlexKeyColors(),
   visualDensity: FlexColorScheme.comfortablePlatformDensity,
   useMaterial3: true,
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
-  fontFamily: GoogleFonts.notoSans().fontFamily,
+  fontFamily: GoogleFonts.merriweather().fontFamily,
 );
+// If you do not have a themeMode switch, uncomment this line
+// to let the device system mode control the theme mode:
+// themeMode: ThemeMode.system,

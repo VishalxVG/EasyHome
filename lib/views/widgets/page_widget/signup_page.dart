@@ -19,6 +19,17 @@ Widget RegisterPage(BuildContext context) {
         const SizedBox(
           height: 10,
         ),
+
+        Text(
+          "PLEASE CREATE A ACCOUNT",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSurface,
+            fontSize: 22,
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         // Draggable container
         Obx(
           () => Stack(
@@ -82,16 +93,7 @@ Widget RegisterPage(BuildContext context) {
             ],
           ),
         ),
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          "PLEASE CREATE A ACCOUNT",
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onSurface,
-            fontSize: 22,
-          ),
-        ),
+
         const SizedBox(
           height: 20,
         ),

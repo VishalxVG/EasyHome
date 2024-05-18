@@ -21,10 +21,12 @@ class SignupPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Image(
-                  image: AssetImage(AppImage.LOGO),
-                  width: 200,
-                  height: 200,
+                const SizedBox(
+                  width: 250,
+                  height: 180,
+                  child: Image(
+                    image: AssetImage(AppImage.LOGO),
+                  ),
                 ),
                 Column(
                   children: [

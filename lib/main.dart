@@ -1,5 +1,7 @@
-import 'package:easyhome/consts/app_themedata.dart';
-import 'package:easyhome/views/pages/singup_login.dart';
+import 'package:easyhome/views/pages/application_page.dart';
+import 'package:easyhome/views/pages/welcome_page.dart';
+import 'package:easyhome/views/themes/app_themedata.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: flexLightTheme,
       darkTheme: flexDarkTheme,
       themeMode: ThemeMode.system,
-      home: const SignupPage(),
+      home: const ApplicationPage(),
     );
   }
 }

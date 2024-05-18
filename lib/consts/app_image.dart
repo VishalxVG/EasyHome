@@ -21,3 +21,9 @@ class AppIcons {
 
   static const String APPLELOGO = "assets/icons/apple.png";
 }
+
+class AppAnimations {
+  static const ANIMATION1 = "assets/animations/animation1.json";
+  static const ANIMATION2 = "assets/animations/animation2.json";
+  static const ANIMATION3 = "assets/animations/animation3.json";
+}

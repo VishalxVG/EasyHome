@@ -4,6 +4,7 @@ import 'package:easyhome/consts/app_image.dart';
 import 'package:easyhome/views/pages/singup_login.dart';
 import 'package:easyhome/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 Widget appOnBoardingScreen(
@@ -63,8 +64,7 @@ Widget appOnBoardingScreen(
                 curve: Curves.linear,
               );
             } else {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const SignupPage()));
+              Get.to(const SignupPage());
             }
           },
         ),

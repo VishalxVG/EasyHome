@@ -20,17 +20,19 @@ class _ApplicationPageState extends State<ApplicationPage> {
       child: SafeArea(
         child: Scaffold(
           body: Obx(() => buildPage(controller.index.value, context)),
-          bottomNavigationBar: Obx(() => MoltenBottomNavigationBar(
-                borderRaduis: BorderRadius.circular(8),
-                curve: Curves.easeIn,
-                barColor: Theme.of(context).colorScheme.secondaryContainer,
-                tabs: bottomTabs,
-                margin: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
-                selectedIndex: controller.index.value,
-                onTabChange: (index) {
-                  controller.updateIndex(index);
-                },
-              )),
+          bottomNavigationBar: Obx(
+            () => MoltenBottomNavigationBar(
+              borderRaduis: BorderRadius.circular(8),
+              curve: Curves.easeIn,
+              barColor: Theme.of(context).colorScheme.secondaryContainer,
+              tabs: bottomTabs,
+              margin: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
+              selectedIndex: controller.index.value,
+              onTabChange: (index) {
+                controller.updateIndex(index);
+              },
+            ),
+          ),
         ),
       ),
     );

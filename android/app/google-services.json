@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352004648887",
+    "project_id": "easyhome-956de",
+    "storage_bucket": "easyhome-956de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352004648887:android:2422628de05a1f2e0e4232",
+        "android_client_info": {
+          "package_name": "com.example.easyhome"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsQe1wC9DYUqVl8feRRyrIJpgCt9UixYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

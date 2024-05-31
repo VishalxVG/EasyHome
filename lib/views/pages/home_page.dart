@@ -28,18 +28,24 @@ class HomePage extends StatelessWidget {
                     border: Border.all(
                       color: Colors.grey.withOpacity(0.5),
                     )),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.arrow_left),
-                    Column(
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_left),
+                    ),
+                    const Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text("DECEMBER"),
                         Text("11 Transactions"),
                       ],
                     ),
-                    Icon(Icons.arrow_right),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_right),
+                    ),
                   ],
                 ),
               ),

@@ -13,6 +13,7 @@ Widget appTextField(
   bool isPasswordFiled = false,
   TextEditingController? controller,
   void Function(String value)? func,
+  required String? Function(String? value) validator,
 }) {
   return Container(
     padding: const EdgeInsets.only(left: 10, right: 10),
@@ -43,34 +44,69 @@ Widget appTextField(
                 width: 10,
               ),
               Expanded(
-                child: Obx(() {
-                  return TextField(
-                    controller: controller,
-                    onChanged: (value) => func?.call(value),
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      hintText: hintText,
-                      hintStyle: const TextStyle(
-                        fontSize: 14,
-                      ),
-                      suffixIcon: isPasswordFiled
-                          ? IconButton(
-                              icon: Icon(
-                                size: 20,
-                                color: Theme.of(context).colorScheme.primary,
-                                textFieldController.isObscure.value
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
+                child: isPasswordFiled
+                    ? Obx(
+                        () {
+                          return TextFormField(
+                            controller: controller,
+                            onChanged: (value) => func?.call(value),
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                              hintText: hintText,
+                              hintStyle: const TextStyle(
+                                fontSize: 14,
                               ),
-                              onPressed: textFieldController.toggleObscure,
-                            )
-                          : null,
-                    ),
-                    autocorrect: false,
-                    maxLines: 1,
-                    obscureText: textFieldController.isObscure.value,
-                  );
-                }),
+                              suffixIcon: isPasswordFiled
+                                  ? IconButton(
+                                      icon: Icon(
+                                        size: 20,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        textFieldController.isObscure.value
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                      ),
+                                      onPressed:
+                                          textFieldController.toggleObscure,
+                                    )
+                                  : null,
+                            ),
+                            autocorrect: false,
+                            maxLines: 1,
+                            obscureText: textFieldController.isObscure.value,
+                            validator: validator,
+                          );
+                        },
+                      )
+                    : TextFormField(
+                        controller: controller,
+                        onChanged: (value) => func?.call(value),
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          hintText: hintText,
+                          hintStyle: const TextStyle(
+                            fontSize: 14,
+                          ),
+                          suffixIcon: isPasswordFiled
+                              ? IconButton(
+                                  icon: Icon(
+                                    size: 20,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    textFieldController.isObscure.value
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                  onPressed: textFieldController.toggleObscure,
+                                )
+                              : null,
+                        ),
+                        autocorrect: false,
+                        maxLines: 1,
+                        obscureText: false,
+                        validator: validator,
+                      ),
               ),
             ],
           ),

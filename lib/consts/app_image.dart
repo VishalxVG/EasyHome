@@ -16,6 +16,11 @@ class AppImage {
   static const String HOUSE = "assets/images/house.png";
   static const String SHOPPING = "assets/images/shooping.png";
   static const String CAR = "assets/images/car.png";
+
+  //* ONBOARDING PAGE IMAGES
+  static const String PAGE1 = "assets/logos/page1.png";
+  static const String PAGE2 = "assets/logos/page2.png";
+  static const String PAGE3 = "assets/logos/page3.png";
 }
 
 class AppIcons {

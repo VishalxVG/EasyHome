@@ -1,11 +1,16 @@
 // ignore_for_file: file_names
 
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:easyhome/consts/app_colorscheme.dart';
 import 'package:easyhome/consts/app_image.dart';
+
 import 'package:easyhome/controllers/dot_controller.dart';
 import 'package:easyhome/views/widgets/pageview_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -18,67 +23,61 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   final DotController dotController = Get.put(DotController());
   @override
-  Widget build(BuildContext context) {
+  build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primaryBackgroundColor,
       body: SafeArea(
-          child: Container(
-        padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            PageView(
-              controller: _pageController,
-              onPageChanged: (value) {
-                dotController.updateIndex(value);
-              },
-              children: [
-                appOnBoardingScreen(
-                  _pageController,
-                  context,
-                  imagePath: AppAnimations.ANIMATION3,
-                  title: "MAKE A BUDGET",
-                  subTitle:
-                      "Take control of your spending by creating personalized budgets tailored to your lifestyle and financial goals.",
-                  index: 1,
-                ),
-                appOnBoardingScreen(
-                  _pageController,
-                  context,
-                  imagePath: AppAnimations.ANIMATION1,
-                  title: "TRACK YOUR SPENDING",
-                  subTitle:
-                      "Stay informed about your daily expenses and habits with our intuitive spending tracker",
-                  index: 2,
-                ),
-                appOnBoardingScreen(
-                  _pageController,
-                  context,
-                  imagePath: AppAnimations.ANIMATION2,
-                  title: "ANALYZE YOUR FINANCES",
-                  subTitle:
-                      "Gain valuable insights into your financial health and make informed decisions",
-                  index: 3,
-                ),
-              ],
-            ),
-            Obx(
-              () => Positioned(
-                bottom: 30,
-                child: DotsIndicator(
-                  dotsCount: 3,
-                  position: dotController.index.value,
-                  decorator: DotsDecorator(
-                    size: const Size.square(9.0),
-                    activeSize: const Size(18, 8),
-                    activeShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+          child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          PageView(
+            controller: _pageController,
+            onPageChanged: (value) {
+              dotController.updateIndex(value);
+            },
+            children: [
+              appStructure(
+                _pageController,
+                context,
+                index: 1,
+                imagePath: AppImage.PAGE1,
+                color: AppColors.PAGE1COLOR,
+              ),
+              appStructure(
+                _pageController,
+                context,
+                index: 2,
+                imagePath: AppImage.PAGE2,
+                color: AppColors.PAGE2COLOR,
+              ),
+              appStructure(
+                _pageController,
+                context,
+                index: 3,
+                imagePath: AppImage.PAGE3,
+                color: AppColors.PAGE3COLOR,
+              )
+            ],
+          ),
+          Obx(
+            () => Positioned(
+              top: 360.h,
+              child: DotsIndicator(
+                dotsCount: 3,
+                position: dotController.index.value,
+                decorator: DotsDecorator(
+                  color: Colors.white,
+                  activeColor: HexColor("2C569C"),
+                  size: const Size.square(9.0),
+                  activeSize: const Size(18, 8),
+                  activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       )),
     );
   }

@@ -1,6 +1,9 @@
 // // Light and dark ColorSchemes made by FlexColorScheme v7.3.1.
 // // These ColorScheme objects require Flutter 3.7 or later.
-// import 'package:flutter/material.dart';
+// ignore_for_file: non_constant_identifier_names, constant_identifier_names
+
+import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 // const ColorScheme flexSchemeLight = ColorScheme(
 //   brightness: Brightness.light,
@@ -69,3 +72,13 @@
 //   inversePrimary: Color(0xff404a58),
 //   surfaceTint: Color(0xff748bac),
 // );
+
+class AppColors {
+  static const primaryBackgroundColor = Color(0xFFF5F9FF);
+  static const primaryContainerBackground = Color(0xFF8F9AFE);
+
+  //* ONBOARDING CONTAINERCOLORS
+  static const PAGE1COLOR = Color.fromRGBO(144, 155, 255, 1);
+  static const PAGE2COLOR = Color.fromRGBO(31, 151, 151, 1);
+  static const PAGE3COLOR = Color.fromRGBO(170, 15, 71, 1);
+}

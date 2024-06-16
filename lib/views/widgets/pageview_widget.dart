@@ -1,8 +1,7 @@
 // ignore: file_names
 
 import 'package:easyhome/consts/app_colorscheme.dart';
-import 'package:easyhome/consts/app_image.dart';
-
+import 'package:easyhome/views/pages/signup_options_page.dart';
 import 'package:easyhome/views/pages/singup_login.dart';
 
 import 'package:flutter/material.dart';
@@ -176,22 +175,81 @@ Widget appStructure(
                             curve: Curves.bounceOut,
                           );
                         } else {
-                          Get.to(const SignupPage());
+                          Get.to(const SignupOptionsPage());
                         }
                       },
-                      child: Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          color: HexColor("2C569C"),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: const Icon(
-                          Icons.arrow_right_alt,
-                          size: 35,
-                          color: Colors.white,
-                        ),
-                      ),
+                      child: index != 3
+                          ? Container(
+                              height: 55,
+                              width: 55,
+                              decoration: BoxDecoration(
+                                color: HexColor("2C569C"),
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 163, 174, 188),
+                                    width: 0.5),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 5,
+                                      spreadRadius: 1,
+                                      offset: Offset(2.5, 1.5))
+                                ],
+                              ),
+                              child: const Icon(
+                                Icons.arrow_right_alt,
+                                size: 35,
+                                color: Colors.white,
+                              ),
+                            )
+                          : Container(
+                              height: 55,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: HexColor("2C569C"),
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 163, 174, 188),
+                                    width: 0.5),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5,
+                                    spreadRadius: 1,
+                                  )
+                                ],
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 40, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      "Get Started",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Container(
+                                      height: 45,
+                                      width: 45,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
+                                      child: const Icon(
+                                        Icons.arrow_right_alt,
+                                        size: 35,
+                                        color: AppColors
+                                            .primaryContainerBackground,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                     )
                   ],
                 ),

@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:easyhome/consts/app_colorscheme.dart';
 import 'package:easyhome/consts/app_image.dart';
 import 'package:easyhome/controllers/signin_controller.dart';
 
@@ -11,28 +12,45 @@ import 'package:get/get.dart';
 SigninController signInController = Get.put(SigninController());
 Widget SingInPage(BuildContext context) {
   return Container(
-    padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.only(top: 30),
+    padding: const EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(45),
+      border: Border.all(
+        color: AppColors.primaryContainerBackground.withOpacity(0.3),
+        width: 1.5,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.shade400,
+          blurRadius: 0.5,
+          spreadRadius: .5,
+        )
+      ],
+    ),
     child: Form(
       key: signInController.formKey,
       child: Column(
         children: [
           const SizedBox(
-            height: 10,
+            height: 40,
           ),
           Text(
-            "WELCOME BACK",
+            "WELCOME BACK! GLAD TO SEE YOUR AGAIN",
+            textAlign: TextAlign.center,
             style: TextStyle(
-                color: Theme.of(context).colorScheme.onSurface,
-                fontSize: 24,
-                fontWeight: FontWeight.w400),
+              color: Theme.of(context).colorScheme.onSurface,
+              fontSize: 24,
+              fontWeight: FontWeight.w400,
+            ),
           ),
           const SizedBox(
-            height: 20,
+            height: 40,
           ),
           appTextField(
             context,
-            text: "Email",
-            hintText: "Type your email",
+            hintText: "EMAIL",
             icon: AppIcons.EMAIL,
             isPasswordFiled: false,
             func: (value) {
@@ -41,12 +59,11 @@ Widget SingInPage(BuildContext context) {
             validator: (value) => signInController.validateEmail(value),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           appTextField(
             context,
-            text: "Password",
-            hintText: "Type your password",
+            hintText: "PASSWORD",
             icon: AppIcons.LOCK,
             isPasswordFiled: true,
             func: (value) {
@@ -55,7 +72,7 @@ Widget SingInPage(BuildContext context) {
             validator: (value) => signInController.validatePassword(value),
           ),
           const SizedBox(
-            height: 30,
+            height: 40,
           ),
           LoginSingUpButton(
             context,
@@ -73,41 +90,15 @@ Widget SingInPage(BuildContext context) {
             height: 5,
           ),
           Align(
-            alignment: Alignment.bottomRight,
+            alignment: Alignment.bottomLeft,
             child: TextButton(
               onPressed: () {},
-              child: const Text("Forgot Password ? "),
+              child: const Text(
+                "Forgot Password ? ",
+                style: TextStyle(color: AppColors.primaryContainerBackground),
+              ),
             ),
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.transparent,
-                foregroundImage: AssetImage(AppIcons.GOOGLELOGO),
-                radius: 15,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.transparent,
-                foregroundImage: AssetImage(AppIcons.APPLELOGO),
-                radius: 15,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.transparent,
-                foregroundImage: AssetImage(AppIcons.PHONEAUTH),
-                radius: 20,
-              ),
-            ],
-          )
         ],
       ),
     ),

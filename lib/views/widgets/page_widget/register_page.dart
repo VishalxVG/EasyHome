@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:easyhome/consts/app_colorscheme.dart';
 import 'package:easyhome/consts/app_image.dart';
 
 import 'package:easyhome/controllers/signup_controller.dart';
@@ -12,37 +13,56 @@ import 'package:get/get.dart';
 final SliderController controller = Get.put(SliderController());
 SignupController signupController = Get.put(SignupController());
 Widget RegisterPage(BuildContext context) {
-  final maxWidth = MediaQuery.of(context).size.width - 120;
+  final maxWidth = MediaQuery.of(context).size.width - 144;
 
   return Container(
-    padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.only(top: 30),
+    padding: const EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(45),
+      border: Border.all(
+        color: AppColors.primaryContainerBackground.withOpacity(0.3),
+        width: 1.5,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.shade400,
+          blurRadius: 0.5,
+          spreadRadius: .5,
+        )
+      ],
+    ),
     child: Form(
       key: signupController.formkey,
       child: Column(
         children: [
           const SizedBox(
-            height: 10,
+            height: 30,
           ),
 
           Text(
             "PLEASE CREATE A ACCOUNT",
             style: TextStyle(
               color: Theme.of(context).colorScheme.onSurface,
-              fontSize: 22,
+              fontSize: 24,
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           // Draggable container
           Obx(
             () => Stack(
               children: [
                 Container(
-                  height: 40,
+                  height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Colors.grey,
+                    ),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -76,12 +96,12 @@ Widget RegisterPage(BuildContext context) {
                     },
                     child: Container(
                       width: 170,
-                      height: 40,
+                      height: 50,
                       decoration: BoxDecoration(
                         color: controller.userType.value == "Owner"
-                            ? Colors.blue
+                            ? AppColors.primaryContainerBackground
                             : Colors.green,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
                         child: Text(
@@ -102,33 +122,30 @@ Widget RegisterPage(BuildContext context) {
           ),
 
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           appTextField(
             context,
-            text: "Username",
             hintText: "Type your name",
             icon: AppIcons.PROFILE,
             func: (value) => signupController.updateUsername(value),
             validator: (value) => signupController.validateUserName(value),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           appTextField(
             context,
-            text: "Email",
             hintText: "Type your email",
             icon: AppIcons.EMAIL,
             func: (value) => signupController.updateEmail(value),
             validator: (value) => signupController.validateEmail(value),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           appTextField(
             context,
-            text: "Password",
             hintText: "Type your password",
             icon: AppIcons.LOCK,
             isPasswordFiled: true,
@@ -136,11 +153,10 @@ Widget RegisterPage(BuildContext context) {
             validator: (value) => signupController.validatePassword(value),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           appTextField(
             context,
-            text: "Confirm Password",
             hintText: "Type your password",
             icon: AppIcons.LOCK,
             isPasswordFiled: true,

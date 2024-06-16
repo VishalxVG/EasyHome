@@ -26,8 +26,6 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Flutter Demo',
-          theme: flexLightTheme,
-          darkTheme: flexDarkTheme,
           themeMode: ThemeMode.system,
           home: const OnboardingScreen(),
         );

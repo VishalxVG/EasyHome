@@ -3,8 +3,8 @@ import 'package:easyhome/consts/app_image.dart';
 
 import 'package:easyhome/controllers/button_controller.dart';
 import 'package:easyhome/views/widgets/custom_button.dart';
-import 'package:easyhome/views/widgets/page_widget/signin_page.dart';
-import 'package:easyhome/views/widgets/page_widget/register_page.dart';
+import 'package:easyhome/views/widgets/auth_page_widgets/signin_page.dart';
+import 'package:easyhome/views/widgets/auth_page_widgets/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +17,7 @@ class SignupPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.primaryBackgroundColor,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context).pop();
@@ -39,7 +40,7 @@ class SignupPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
           child: SingleChildScrollView(
             child: Column(
               children: [

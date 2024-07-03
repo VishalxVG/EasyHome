@@ -50,14 +50,14 @@ class SigninController extends GetxController {
     }
   }
 
-  // FIREBASE AUTHENCATION LOGIC USING EMAIL AND PASSWORD
+  //! FIREBASE AUTHENCATION LOGIC USING EMAIL AND PASSWORD
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-
+      
       // Successfull Singin
       Get.snackbar(
         'Success',

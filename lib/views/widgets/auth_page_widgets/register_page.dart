@@ -38,11 +38,11 @@ Widget RegisterPage(BuildContext context) {
       child: Column(
         children: [
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
-
           Text(
-            "PLEASE CREATE A ACCOUNT",
+            "HELLO! PLEASE REGISTER TO GET STARTED",
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: Theme.of(context).colorScheme.onSurface,
               fontSize: 24,
@@ -99,8 +99,8 @@ Widget RegisterPage(BuildContext context) {
                       height: 50,
                       decoration: BoxDecoration(
                         color: controller.userType.value == "Owner"
-                            ? AppColors.primaryContainerBackground
-                            : Colors.green,
+                            ? Colors.black
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(

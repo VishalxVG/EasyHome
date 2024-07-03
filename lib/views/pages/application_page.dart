@@ -1,3 +1,4 @@
+import 'package:easyhome/consts/app_colorscheme.dart';
 import 'package:easyhome/controllers/bottom_navigation_controller.dart';
 import 'package:easyhome/views/widgets/application_page/applicaton_page_widget.dart';
 import 'package:flutter/material.dart';
@@ -15,23 +16,24 @@ class _ApplicationPageState extends State<ApplicationPage> {
   BottomNavigationController controller = Get.put(BottomNavigationController());
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).colorScheme.surface,
-      child: SafeArea(
-        child: Scaffold(
-          body: Obx(() => buildPage(controller.index.value, context)),
-          bottomNavigationBar: Obx(
-            () => MoltenBottomNavigationBar(
-              borderRaduis: BorderRadius.circular(8),
-              curve: Curves.easeIn,
-              barColor: Theme.of(context).colorScheme.secondaryContainer,
-              tabs: bottomTabs,
-              margin: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
-              selectedIndex: controller.index.value,
-              onTabChange: (index) {
-                controller.updateIndex(index);
-              },
-            ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.primaryBackgroundColor,
+        body: Obx(() => buildPage(controller.index.value, context)),
+        bottomNavigationBar: Obx(
+          () => MoltenBottomNavigationBar(
+            borderRaduis: BorderRadius.circular(15),
+            domeCircleColor: AppColors.primaryContainerBackground,
+            curve: Curves.easeIn,
+            barColor: Colors.white,
+            borderSize: 1,
+            tabs: bottomTabs,
+            borderColor: Colors.grey.withOpacity(0.5),
+            margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+            selectedIndex: controller.index.value,
+            onTabChange: (index) {
+              controller.updateIndex(index);
+            },
           ),
         ),
       ),

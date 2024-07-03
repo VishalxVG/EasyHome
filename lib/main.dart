@@ -24,10 +24,11 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(430, 932),
       builder: (context, child) {
-        return GetMaterialApp(
+        return const GetMaterialApp(
           title: 'Flutter Demo',
           themeMode: ThemeMode.system,
-          home: const OnboardingScreen(),
+          debugShowCheckedModeBanner: false,
+          home: OnboardingScreen(),
         );
       },
     );

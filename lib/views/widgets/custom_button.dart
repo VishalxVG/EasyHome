@@ -60,44 +60,47 @@ Widget LoginSingUpButton(
   String title = "LOGIN",
   void Function()? func,
 }) {
-  return Container(
-    height: 60,
-    width: 350,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(30),
-      color: AppColors.primaryContainerBackground,
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.grey,
-          spreadRadius: 0.5,
-          blurRadius: 10,
-          offset: Offset(0, 4),
-        ),
-      ],
-    ),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 130, right: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(color: Colors.white, fontSize: 17),
+  return GestureDetector(
+    onTap: func,
+    child: Container(
+      height: 60,
+      width: 350,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: AppColors.primaryContainerBackground,
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.grey,
+            spreadRadius: 0.5,
+            blurRadius: 10,
+            offset: Offset(0, 4),
           ),
-          Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: const Icon(
-              Icons.arrow_right_alt,
-              size: 35,
-              color: AppColors.primaryContainerBackground,
-            ),
-          )
         ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 130, right: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 17),
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: const Icon(
+                Icons.arrow_right_alt,
+                size: 35,
+                color: AppColors.primaryContainerBackground,
+              ),
+            )
+          ],
+        ),
       ),
     ),
   );
